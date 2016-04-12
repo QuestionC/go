@@ -2518,9 +2518,9 @@ func pkgnotused(lineno int, path string, name string) {
 		elem = elem[i+1:]
 	}
 	if name == "" || elem == name {
-		yyerrorl(int(lineno), "imported and not used: %q", path)
+		yywarnl(int(lineno), "imported and not used: %q", path)
 	} else {
-		yyerrorl(int(lineno), "imported and not used: %q as %s", path, name)
+		yywarnl(int(lineno), "imported and not used: %q as %s", path, name)
 	}
 }
 

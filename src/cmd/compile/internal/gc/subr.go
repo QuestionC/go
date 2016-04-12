@@ -109,6 +109,10 @@ func yyerrorl(line int, format string, args ...interface{}) {
 	}
 }
 
+func yywarnl(line int, format string, args ...interface{}) {
+	fmt.Printf("WARNING: %v: %s\n", Ctxt.Line(line), fmt.Sprintf(format, args...))
+}
+
 var yyerror_lastsyntax int
 
 func Yyerror(format string, args ...interface{}) {
